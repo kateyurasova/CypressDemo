@@ -1,0 +1,26 @@
+{
+  "name": "cypressdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kate Yurasova",
+  "emailBodyFrame": false,
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^4.10.0",
+    "cypress-downloadfile": "^1.2.0",
+    "cypress-file-upload": "^3.5.3",
+    "cypress-iframe": "^1.0.1",
+    "cypress-promise": "^1.1.0",
+    "cypress-puppeteer-plugin": "^1.0.1",
+    "cypress-xpath": "^1.6.0",
+    "puppeteer": "^5.2.1",
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  },
+  "dependencies": {
+    "beta": "0.0.1"
+  }
+}
