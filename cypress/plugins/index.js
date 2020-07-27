@@ -18,37 +18,23 @@ const chrome = require('selenium-webdriver/chrome');
 //require('chromedriver');
 const chromeCapabilities = new chrome.Options();
 const until = require('selenium-webdriver/lib/until');
-const {some_method} = require('../support/puppeter')
+const {login_facebook, work_with_several_tabs} = require('../support/puppeter')
 /**
  * @type {Cypress.PluginConfig}
  */
 module.exports = (on, config) => {
     // `on` is used to hook into various events Cypress emits
     // `config` is the resolved Cypress config
-//cy.task(`seleniumBrowser`);
-    on("task", {
-        seleniumBrowser: async () => {
-            driver = new Builder()
-                .setChromeOptions(chromeCapabilities)
-                .forBrowser('chrome')
-                .build();
-            await driver.get(`https://www.google.com/gmail/about/#`);
-            await driver.executeScript("arguments[0].checked = true;", By.css('a[ga-event-action="sign in"]'));
-            await driver.wait(until.elementLocated(By.css('a[ga-event-action="sign in"]')), 10000).click();
-            await driver.wait(until.elementLocated(By.id('identifierId')), 10000)
-                .catch(() => {
-                    throw new Error('The correct id is identifierId');
-                });
-            return driver;
-        }
-    });
-
     on("task", {
         downloadFile
     });
 
     on("task", {
-        some_method
+        login_facebook
+    });
+
+    on("task", {
+        work_with_several_tabs
     });
 
     on('before:browser:launch', (browser = {}, launchOptions) => {

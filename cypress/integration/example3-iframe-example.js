@@ -14,10 +14,11 @@ context('Work with iFrames', () => {
             const $body = $iframe.contents().find('body');
             cy.wrap($body).find('#input').type('First experiment');
         });
-
+        cy.wait(5000);
         cy.log('Example 2: Use implementation in commands.js');
         cy.switchToIframe(iFrameSelector).find('#input').clear().type('Second experiment');
 
+        cy.wait(5000);
         cy.log('Example 3: Use cypress-iframe package (https://www.npmjs.com/package/cypress-iframe)');
         cy.iframe(iFrameSelector).find('#input').clear().type('Third experiment');
 

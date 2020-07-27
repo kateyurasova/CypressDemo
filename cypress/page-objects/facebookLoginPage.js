@@ -18,12 +18,18 @@ class facebookLoginPage {
     this.loginButton.click();
   }
 
-  loginWithPuppeter(data) {
-    cy.task('some_method', {
+  loginFacebookWithPuppeter(data) {
+    cy.task('login_facebook', {
       email: data.email,
       password: data.password,
       url: data.url
     }).then(result => {
+      expect(result).to.eq(true);
+    })
+  }
+
+  openNewTabInGoogle() {
+    cy.task('work_with_several_tabs').then(result => {
       expect(result).to.eq(true);
     })
   }

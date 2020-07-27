@@ -25,14 +25,6 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('switchToIframe', (iframeSelector) => {
-    /*cy.get("div[class='cdk-overlay-container']").then(($layer) => {
-        if ($layer.find(iframeSelector).exist) {
-            return cy.wrap($iframe.contents().find('body'));
-        } else {
-            return null;
-        }
-    })*/
-
     cy.get(iframeSelector).then(function ($iframe) {
         const $body = $iframe.contents().find('body');
         return cy.wrap($body);
