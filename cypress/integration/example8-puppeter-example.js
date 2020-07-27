@@ -4,7 +4,7 @@ import FacebookProfilePage from "../page-objects/facebookProfilePage";
 import GooglePage from "../page-objects/googlePage";
 
 context('Work with Puppeter', () => {
-    xit('Login Facebook', () => {
+    it('Login Facebook', () => {
         FacebookLoginPage.loginFacebookWithPuppeteer({email: loginData.email, password: loginData.password,
             url: FacebookProfilePage.url});
     })
