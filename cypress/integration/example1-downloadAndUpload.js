@@ -1,6 +1,6 @@
 import * as loginData from '../fixtures/login';
-import FacebookProfilePage from "../page-objects/facebookProfilePage";
-import FacebookLoginPage from "../page-objects/facebookLoginPage";
+import VK_ProfilePage from "../page-objects/VK_ProfilePage";
+import VK_LoginPage from "../page-objects/VK_LoginPage";
 
 context('Uploads and downloads', () => {
     const FOLDER_NAME = Cypress.env('downloadFolder');
@@ -23,11 +23,10 @@ context('Uploads and downloads', () => {
          */
 
         cy.log('WHEN User logs in the Facebook profile');
-        FacebookProfilePage.open();
-        FacebookLoginPage.login(loginData.email, loginData.password);
-
+        VK_LoginPage.open();
+        VK_LoginPage.login(loginData.email, loginData.password);
         cy.log('AND clicks Update button at the profile');
-        FacebookProfilePage.updatePhotoButton.click({force: true});
+        VK_ProfilePage.updatePhotoButton.click({force: true});
         cy.log('AND uploads a new profile photo');
         cy.uploadFile(`${FOLDER_NAME}/${FILE_NAME}`);
         cy.wait(10000);

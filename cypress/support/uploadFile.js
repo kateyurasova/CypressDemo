@@ -1,4 +1,4 @@
-Cypress.Commands.add('uploadFile', (fileName, selector = 'input[title="Выберите файл для загрузки"]') => {
+Cypress.Commands.add('uploadFile', (fileName, selector = 'input[id="choose_photo_upload"]') => {
   let fileType = (fileName.toLowerCase().includes('.jpg')) ? 'image/jpeg' :
    (fileName.toLowerCase().includes('.png')) ? 'image/png' :
    (fileName.toLowerCase().includes('.pdf')) ? 'application/pdf' : '';

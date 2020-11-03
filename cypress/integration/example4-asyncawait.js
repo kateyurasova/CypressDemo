@@ -1,7 +1,7 @@
 import * as loginData from "../fixtures/login";
 import * as user from "../fixtures/user";
-import FacebookLoginPage from "../page-objects/facebookLoginPage";
-import FacebookProfilePage from "../page-objects/facebookProfilePage";
+import VK_LoginPage from "../page-objects/VK_LoginPage";
+import VK_ProfilePage from "../page-objects/VK_ProfilePage";
 import promisify from "cypress-promise";
 
 context('Async/ await', () => {
@@ -9,10 +9,10 @@ context('Async/ await', () => {
         Example of usage of promisify for getting text
     */
     it('aync await', async () => {
-        FacebookProfilePage.open();
-        FacebookLoginPage.login(loginData.email, loginData.password);
-        FacebookProfilePage.isUserAtPage();
-        const profileInfo = await FacebookProfilePage.getProfileInfo();
+        VK_LoginPage.open();
+        VK_LoginPage.login(loginData.email, loginData.password);
+        cy.get('div#side_bar_inner').find('li').first().click();
+        const profileInfo = await VK_ProfilePage.getProfileInfo();
         cy.log(profileInfo);
     })
 
