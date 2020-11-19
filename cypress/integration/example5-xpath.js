@@ -1,7 +1,7 @@
 import * as loginData from '../fixtures/login';
 import VK_LoginPage from "../page-objects/VK_LoginPage";
 
-context('Fiatures', () => {
+context('Xpath', () => {
 
     beforeEach(() => {
         Cypress.Cookies.preserveOnce('XHR_STATS_TRANSPORT_META_web', 'XHR_STATS_TRANSPORT_DATA_LOCK_web')
@@ -18,16 +18,5 @@ context('Fiatures', () => {
         cy.wait(20000);
 
     })
-
-    it('Using of Xpath', () => {
-        /*
-        Example of usage of cypress-xpath package
-        */
-        cy.log('WHEN User logs in the Facebook profile');
-
-        cy.wait(30000);
-
-    })
-
 
 });
